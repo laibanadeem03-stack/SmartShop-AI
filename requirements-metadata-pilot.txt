@@ -1,0 +1,2 @@
+# The only additional approved dependency. Parquet is statically linked; no httpfs.
+duckdb==2.0.0

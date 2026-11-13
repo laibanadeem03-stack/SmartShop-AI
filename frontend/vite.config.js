@@ -1,0 +1,15 @@
+import { defineConfig } from 'vitest/config';
+import react from '@vitejs/plugin-react';
+import tailwindcss from '@tailwindcss/vite';
+
+export default defineConfig({
+  plugins: [react(), tailwindcss()],
+  server: { host: 'localhost', port: 5173, strictPort: true, fs: { strict: true } },
+  preview: { host: 'localhost', port: 5173, strictPort: true },
+  test: {
+    environment: 'jsdom',
+    setupFiles: ['./src/test/setup.js'],
+    include: ['src/**/*.test.{js,jsx}'],
+    restoreMocks: true,
+  },
+});
